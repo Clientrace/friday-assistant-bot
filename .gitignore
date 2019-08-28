@@ -22,7 +22,7 @@ var/
 test.py
 
 # Environment Vars
-src/env/
+*.cfg
 
 # Uxy Generated Files
 dist.zip
