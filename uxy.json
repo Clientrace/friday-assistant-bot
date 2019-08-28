@@ -1,0 +1,69 @@
+{
+  "app:config": {
+    "dev": {
+      "fileReplacements": [
+        {
+          "replace": "src/env/environment.cfg",
+          "with": "src/env/environment.dev.cfg"
+        }
+      ]
+    },
+    "prod": {
+      "fileReplacements": [
+        {
+          "replace": "src/env/environment.cfg",
+          "with": "src/env/environment.prod.cfg"
+        }
+      ]
+    }
+  },
+  "app:description": "Assistant Chatbot",
+  "app:name": "friday",
+  "app:runtime": "python",
+  "app:stage": "dev",
+  "app:version": "1",
+  "aws:config": {
+    "dynamodb:session-table": {
+      "rcu": 5,
+      "wcu": 5
+    },
+    "iam:roles": [
+      "arn:aws:iam::aws:policy/AmazonSQSFullAccess",
+      "arn:aws:iam::aws:policy/AWSLambdaFullAccess",
+      "arn:aws:iam::aws:policy/CloudWatchFullAccess",
+      "arn:aws:iam::aws:policy/AmazonAPIGatewayInvokeFullAccess",
+      "arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess",
+      "arn:aws:iam::aws:policy/service-role/AWSLambdaRole"
+    ],
+    "lambda:handler": "index.lambda_handler",
+    "lambda:timeout": 500,
+    "region": "ap-southeast-1"
+  },
+  "chatbot:config": {
+    "URLsToWhiteList": [],
+    "enable_menu": false,
+    "persistent_menu": {
+      "call_to_actions": [
+        {
+          "payload": "PERSIST_OPTION-1",
+          "title": "OPTION-1",
+          "type": "postback"
+        },
+        {
+          "payload": "PERSIST_OPTION-2",
+          "title": "OPTION-2",
+          "type": "postback"
+        },
+        {
+          "payload": "PERSIST_OPTION-3",
+          "title": "OPTION-3",
+          "type": "postback"
+        }
+      ],
+      "composer_input_disabled": false,
+      "locale": "default"
+    }
+  },
+  "fb:verifyToken": "cf906ee5e82a478b91600e01034e3a64",
+  "verbosity": true
+}

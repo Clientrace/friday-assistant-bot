@@ -21,6 +21,9 @@ var/
 
 test.py
 
+# Environment Vars
+src/env/
+
 # Uxy Generated Files
 dist.zip
 .tmp/
