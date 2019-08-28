@@ -2,17 +2,16 @@
   "FS-00" : {
     "description" : "Welcome/Initial message",
     "data" : [
-      "Hi :firstname:! I'm :botname:, nice to meet you!",
-      "Hello, I'm :botname:. What can I do for you?"
+      "Hi :firstname:! I'm :botname:. I can help you with your inquiries.",
+      "Hello! I'm :botname:, I'm here to help.",
+      "Hi there :firstname:! I'll be your assistant."
     ],
     "delay" : 0
   },
   "FS-01" : {
     "description" : "Main message",
     "data" : [
-      "Hello there!",
-      "Hi!",
-      "Hola amigo"
+      "What do you want me to look up and search for you?"
     ],
     "delay" : 0
   }
