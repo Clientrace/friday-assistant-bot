@@ -2,6 +2,7 @@
 from _uxy_core._components import router
 from _uxy_core._components import spiel
 from _uxy_core._components import convo_data
+from src.wrappers.wiki import WikiQuery
 
 
 def exe(userID, data, response, altResponse, choice, optionMatched, valid, maxRetry):
@@ -9,11 +10,11 @@ def exe(userID, data, response, altResponse, choice, optionMatched, valid, maxRe
     if( maxRetry ):
       return [], valid
 
-  response += router.route(userID, 'end')
+  wikiQuery = WikiQuery()
+  respText = wikiQuery.get_content(data['data']['text'])
+  
+  response = spiel.free_text(respText, 0)
+  response += router.route(userID, 'main')
   return response, valid
-
-
-
-
 
 
