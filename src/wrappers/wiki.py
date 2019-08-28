@@ -22,13 +22,24 @@ class WikiQuery:
       'formatversion' : 2,
       'redirects' : True,
       'explaintext' : '',
-      'exsentences' : 15
+      'exsentences' : 1
     }
 
     response = requests.get(url, params=params)
     return response.json()
 
+  @staticmethod
+  def _normalized(msg):
+    ret = ''
+    for words in msg.split(' '):
+      ret += words.capitalize() + ' '
+    return ret
+
 
   def get_content(self, title):
+    title = WikiQuery._normalized(title)
     qresp = WikiQuery._query(self.HOST_URL, title)
-    return qresp['query']['pages'][0]['extract']
+    if( 'extract' in qresp ):
+      return qresp['query']['pages'][0]['extract']
+    else:
+      return None

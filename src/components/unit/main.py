@@ -12,9 +12,13 @@ def exe(userID, data, response, altResponse, choice, optionMatched, valid, maxRe
 
   wikiQuery = WikiQuery()
   respText = wikiQuery.get_content(data['data']['text'])
-  
-  response = spiel.free_text(respText, 0)
-  response += router.route(userID, 'main')
+  if( respText ):
+    response = spiel.free_text(respText, 0)
+    response += router.route(userID, 'main')
+    return response, valid
+
+
   return response, valid
 
+  
 
