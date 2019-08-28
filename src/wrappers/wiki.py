@@ -22,7 +22,7 @@ class WikiQuery:
       'formatversion' : 2,
       'redirects' : True,
       'explaintext' : '',
-      'exsentences' : 1
+      'exsentences' : 3
     }
 
     response = requests.get(url, params=params)
@@ -39,6 +39,7 @@ class WikiQuery:
   def get_content(self, title):
     title = WikiQuery._normalized(title)
     qresp = WikiQuery._query(self.HOST_URL, title)
+    print(qresp)
     if( 'extract' in qresp['query']['pages'][0] ):
       return qresp['query']['pages'][0]['extract']
     else:
