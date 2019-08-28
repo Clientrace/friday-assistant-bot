@@ -39,7 +39,7 @@ class WikiQuery:
   def get_content(self, title):
     title = WikiQuery._normalized(title)
     qresp = WikiQuery._query(self.HOST_URL, title)
-    if( 'extract' in qresp ):
+    if( 'extract' in qresp['query']['pages'][0] ):
       return qresp['query']['pages'][0]['extract']
     else:
       return None
