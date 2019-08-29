@@ -11,9 +11,19 @@
   "FS-01" : {
     "description" : "Main message",
     "data" : [
-      "What do you want me to look up and search for you?"
+      "What do you want me to look up and search for you?",
+      "Hollah :firstname:. What do you want me to search?",
+      "Hello. Enter something and I'll search it right away:",
+      "Need a help? I can search information for you, what information do you want me to search?"
     ],
     "delay" : 0
+  },
+  "FS-02" : {
+    "description" : "Failed to sesarch article",
+    "data" : [
+      "I can't find any article related to that. Try a simpler one.",
+      "Beep bop, didn't find any article relating to what you mention."
+    ]
   }
 }
 
