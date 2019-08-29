@@ -2,9 +2,7 @@
   "FS-00" : {
     "description" : "Welcome/Initial message",
     "data" : [
-      "Hi :firstname:! I'm :botname:. I can help you with your inquiries.",
-      "Hello! I'm :botname:, I'm here to help.",
-      "Hi there :firstname:! I'll be your assistant."
+      "Initializing memory.. Checking batteries.. Turning systems on.. Beep bop, beep bop.. "
     ],
     "delay" : 0
   },
@@ -27,4 +25,5 @@
     "delay" : 0
   }
 }
+
 
