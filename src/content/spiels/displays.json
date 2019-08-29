@@ -23,7 +23,8 @@
     "data" : [
       "I can't find any article related to that. Try a simpler one.",
       "Beep bop, didn't find any article relating to what you mention."
-    ]
+    ],
+    "delay" : 0
   }
 }
 
