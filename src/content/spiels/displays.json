@@ -31,7 +31,19 @@
       "Need a help? I can search information for you, what information do you want me to search?"
     ],
     "delay" : 0
+  },
+  "FS-04" : {
+    "description" : "Update Message",
+    "data" : [
+      "You are using an older version of me. My master updated me. Updating... Beep, bop. bop. bop, beep bop. Version Updated :)",
+      "Error, error, error. Just kidding :P. I have received an update in my system. Updating... Version Updated!",
+      "Beeeeep boooop, my system experienced a chill. Update incomming... Installing.. Version Updated..",
+      "Wait amigo, my creator updated me.. Installing system updates... Version Updated.."
+    ],
+    "delay" : 0
   }
 }
+
+
 
 

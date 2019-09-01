@@ -16,6 +16,8 @@ environment.read('src/env/environment.cfg')
 # Loads application configuration
 appconfig = json.loads(open('uxy.json').read())
 
+# Update Notes
+update_notes = open('releasenotes').read()
 
 
 

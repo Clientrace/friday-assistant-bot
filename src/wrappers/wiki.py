@@ -36,6 +36,21 @@ class WikiQuery:
     return ret
 
 
+  def search(self, query, resultsNum=10, suggest=False):
+    params = {
+      'action' : 'query',
+      'format' : 'json',
+      'list' : 'search',
+      'srprop' : '',
+      'srlimit' : resultsNum,
+      'srsearch' : query
+    }
+    if( suggest ):
+      params['srinfo'] = 'suggestion'
+
+    response = requests.get(self.HOST_URL, params=params)
+    return response.content
+
   def get_content(self, title):
     title = WikiQuery._normalized(title)
     qresp = WikiQuery._query(self.HOST_URL, title)

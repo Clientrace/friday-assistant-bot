@@ -3,5 +3,7 @@ from src.wrappers.wiki import WikiQuery
 
 wq = WikiQuery()
 
-wq.get_content('clarence penaflor')
+
+resp = wq.search('enterprise')
+print(resp)
 

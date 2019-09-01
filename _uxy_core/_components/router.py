@@ -7,6 +7,7 @@ Documented via reST
 Chabot state router
 """
 
+import _uxy_core
 from _uxy_core import appconfig
 from _uxy_core.utility.aws_services.dynamodb import Dynamodb
 from _uxy_core._modules.e2e import input_parser
@@ -26,19 +27,6 @@ def log_error(userID):
   convo_data.increment(userID, 'errorLog')
 
 
-# Check if user already exist
-def user_exists(userID):
-  global DYNAMODB
-  record = DYNAMODB.get_item(
-    {
-      'userID' : {
-        'S' : userID
-      }
-    }
-  )
-  return 'Item' in record
-
-
 # Init user session
 def init_session(userID,platform):
   global DYNAMODB
@@ -55,6 +43,9 @@ def init_session(userID,platform):
       },
       'errorLog' : {
         'N' : '0'
+      },
+      'appversion' : {
+        'S' : _uxy_core.appconfig['app:version']
       },
       'datetimeCreated' : {
         'S' : str(datetime.now() + timedelta(hours=8))
@@ -84,7 +75,7 @@ def set_route(userID, session):
 
 
 # Get current route
-def get_route(userID):
+def get_user_session(userID):
   global DYNAMODB
   data = DYNAMODB.get_item(
     {
@@ -94,15 +85,7 @@ def get_route(userID):
     }
   )
 
-  if( 'Item' in data ):
-    errors = 0
-    if( 'errorLog' in data['Item'] ):
-      errors = data['Item']['errorLog']['N']
-    if( 'session' in data['Item'] ):
-      return data['Item']['session']['S'],errors
-  
-  return 'None','None'
-
+  return data
 
 # Set conversation Route
 def route(userID, sessionName, data=None):
@@ -140,42 +123,62 @@ def route(userID, sessionName, data=None):
 
   return responses
 
+def _app_updates_check(session_data):
+  if( 'appversion' not in session_data ):
+    return True
+
+  appversion = _uxy_core.appconfig['app:version']
+  if( appversion != session_data['appversion']['S'] ):
+    return True
+
+  return False
 
 # Execute Route
 def exe(userID, source, inputData, intentName):
   cur_session = None
   inputData = input_parser.exe(inputData)
 
-  try:
-    if( inputData['type'] == 'payload' ):
-      if( 'PERSIST' in inputData['data']['payload'] ):
-        prev_session,err = get_route(userID)
-        if( prev_session not in persist.STATE_EXCEPTIONS ):
-          cur_session = persist.ROUTES[inputData['data']['payload']]
-          return route(userID, cur_session)
-
-      if( 'FACEBOOK_WELCOME' in inputData['data']['payload'] ):
-        cur_session = 'welcome'
-        init_session(userID, 'facebook')
-
-    if( intentName == 'Default Welcome Intent' ):
-      cur_session = 'welcome'
-      if( not user_exists(userID) ):
-        init_session(userID, source)
-
+  user_session_data = get_user_session(userID)
+  # try:
+  if( 'Item' in user_session_data ):
+    dataItem = user_session_data['Item']
+    if( 'errorLog' in dataItem and 'session' in dataItem ):
+      cur_session = dataItem['session']['S']
+      errors = dataItem['errorLog']['N']
     else:
-      if( not user_exists(userID) ):
-        init_session(userID, source)
-        return route(userID, 'welcome', inputData)
+      init_session(userID, 'facebook')
+      cur_session = 'welcome'
+  else:
+    init_session(userID, 'facebook')
+    cur_session = 'welcome'
 
-      cur_session, errors = get_route(userID)
-      inputData['errors'] = int(errors)
-  except Exception as e:
-    print('[ROUTE ERROR]: '+str(e))
-    cur_session = 'error_fallback'
+  if( inputData['type'] == 'payload' ):
+    if( 'FACEBOOK_WELCOME' in inputData['data']['payload'] ):
+      cur_session = 'welcome'
 
+    elif( 'PERSIST' in inputData['data']['payload'] ):
+      if( _app_updates_check(dataItem) ):
+        convo_data.save_item(userID, 'appversion',\
+          _uxy_core.appconfig['app:version'])
+        return route(userID, 'app_update')
+
+      if( cur_session not in persist.STATE_EXCEPTIONS ):
+        cur_session = persist.ROUTES[inputData['data']['payload']]
+        return route(userID, cur_session)
+
+  if( _app_updates_check(dataItem) ):
+    convo_data.save_item(userID, 'appversion',\
+      _uxy_core.appconfig['app:version'])
+    return route(userID, 'app_update')
+
+  inputData['errors'] = int(errors)
+  # except Exception as e:
+  #   print('[ROUTE ERROR]: '+str(e))
+  #   cur_session = 'error_fallback'
+
+  print('CURSESSION: ')
+  print(cur_session)
   return route(userID, cur_session, inputData)
-
 
 
 
