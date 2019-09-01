@@ -9,10 +9,8 @@
   "FS-01" : {
     "description" : "Main message",
     "data" : [
-      "What do you want me to look up and search for you?",
-      "Hollah :firstname:. What do you want me to search?",
-      "Hello. Enter something and I'll search it right away:",
-      "Need a help? I can search information for you, what information do you want me to search?"
+      "What do you need me to do?",
+      "What can I do for you?"
     ],
     "delay" : 0
   },
@@ -21,6 +19,16 @@
     "data" : [
       "I can't find any article related to that. Try a simpler one.",
       "Beep bop, didn't find any article relating to what you mentioned."
+    ],
+    "delay" : 0
+  },
+  "FS-03" : {
+    "description" : "Inquiry message",
+    "data" : [
+      "What do you want me to look up and search for you?",
+      "Hollah :firstname:. What do you want me to search?",
+      "Hello. Enter something and I'll search it right away:",
+      "Need a help? I can search information for you, what information do you want me to search?"
     ],
     "delay" : 0
   }

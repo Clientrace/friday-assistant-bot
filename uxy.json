@@ -20,7 +20,7 @@
   "app:description": "Assistant Chatbot - Dev",
   "app:name": "friday",
   "app:runtime": "python",
-  "app:stage": "dev",
+  "app:stage": "prod",
   "app:version": "1",
   "aws:config": {
     "dynamodb:session-table": {

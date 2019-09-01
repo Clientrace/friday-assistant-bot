@@ -2,8 +2,8 @@
   "acceptTypes" : ["any"],
   "content" : ["FS-01"],
   "optionType" : "text",
-  "options" : [],
+  "options" : [
+    {"data" : "Inquiry", "syns" : ["inquiry","inquire"]}
+  ],
   "retries" : null
 }
-
-
