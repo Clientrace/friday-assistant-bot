@@ -164,6 +164,10 @@ def exe(userID, source, inputData, intentName):
         init_session(userID, source)
 
     else:
+      if( not user_exists(userID) ):
+        init_session(userID, source)
+        return route(userID, 'welcome', inputData)
+
       cur_session, errors = get_route(userID)
       inputData['errors'] = int(errors)
   except Exception as e:
