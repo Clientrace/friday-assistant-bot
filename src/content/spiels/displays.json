@@ -48,7 +48,17 @@
       "beep, beep, beep. beep, beep, bop. beep, bop, beep, bop. beep, bop, beep, bop. beep. beep, beep, beep. beep, beep, beep."
     ],
     "delay" : 0
+  },
+  "FS-06" : {
+    "description" : "Query Suggestion",
+    "data" : [
+      "Maybe you mean :title:",
+      "I can look up for :title: instead"
+    ]
   }
 }
+
+
+
 
 

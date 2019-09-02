@@ -29,7 +29,7 @@ class WikiQuery:
     return response.json()
 
 
-  def query_by_id(self, url, pageID):
+  def query_by_pageid(self, pageID):
     params = {
       'action' : 'query',
       'prop' : 'extracts',

@@ -1,11 +1,15 @@
 
 import json
 import time
-from src._functions import search
+from src.wrappers.wiki import WikiQuery
+
+wq = WikiQuery()
+  
 
 
-ret = search.exe('bigbang theory', '123456')
-print(ret)
+pp = wq.query_by_pageid('2996918')
+print(json.dumps(pp,indent=2))
+
 
 
 
