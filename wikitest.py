@@ -1,9 +1,16 @@
-from src.wrappers.wiki import WikiQuery
+
+import json
+import time
+from src._functions import search
 
 
-wq = WikiQuery()
+ret = search.exe('bigbang theory', '123456')
+print(ret)
 
 
-resp = wq.search('enterprise')
-print(resp)
+
+
+
+
+
 

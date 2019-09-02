@@ -1,0 +1,42 @@
+{
+  "ignore_phrases" : [
+    "what",
+    "what is",
+    "what are",
+    "what can",
+    "what could",
+    "what to",
+    "what the",
+    "who",
+    "who is",
+    "who are",
+    "who can",
+    "who could",
+    "who the",
+    "how",
+    "how is",
+    "how are",
+    "how can",
+    "how could",
+    "how to",
+    "how the",
+    "when",
+    "when is",
+    "when are",
+    "when can",
+    "when could",
+    "when to",
+    "when the",
+    "where",
+    "where is",
+    "where are",
+    "where can",
+    "where could",
+    "where to",
+    "where the"
+  ],
+  "non_char" : [
+    "~","!","@","#","$","%","^","&","*","(",")","_","-","+","=",
+    "\\","|","/","{","}","'","\"",";",".","[","]","<",">","?","`"
+  ]
+}

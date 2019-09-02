@@ -26,9 +26,9 @@
     "description" : "Inquiry message",
     "data" : [
       "What do you want me to look up and search for you?",
-      "Hollah :firstname:. What do you want me to search?",
-      "Hello. Enter something and I'll search it right away:",
-      "Need a help? I can search information for you, what information do you want me to search?"
+      "What do you want me to search?",
+      "Alright, enter something and I'll search it right away:",
+      "what information do you want me to search?"
     ],
     "delay" : 0
   },
@@ -41,9 +41,14 @@
       "Wait amigo, my creator updated me.. Installing system updates... Version Updated.."
     ],
     "delay" : 0
+  },
+  "FS-05" : {
+    "description" : "Result Found",
+    "data" : [
+      "beep, beep, beep. beep, beep, bop. beep, bop, beep, bop. beep, bop, beep, bop. beep. beep, beep, beep. beep, beep, beep."
+    ],
+    "delay" : 0
   }
 }
-
-
 
 

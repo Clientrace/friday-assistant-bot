@@ -17,7 +17,7 @@
       ]
     }
   },
-  "app:description": "Assistant Chatbot - Dev",
+  "app:description": "Assistant chatbot. Giving you the information you needed.",
   "app:name": "friday",
   "app:runtime": "python",
   "app:stage": "dev",

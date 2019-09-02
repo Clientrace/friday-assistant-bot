@@ -139,47 +139,46 @@ def exe(userID, source, inputData, intentName):
   inputData = input_parser.exe(inputData)
 
   user_session_data = get_user_session(userID)
-  # try:
-  if( 'Item' in user_session_data ):
-    dataItem = user_session_data['Item']
-    if( 'errorLog' in dataItem and 'session' in dataItem ):
-      cur_session = dataItem['session']['S']
-      errors = dataItem['errorLog']['N']
+  try:
+    if( 'Item' in user_session_data ):
+      dataItem = user_session_data['Item']
+      if( 'errorLog' in dataItem and 'session' in dataItem ):
+        cur_session = dataItem['session']['S']
+        errors = dataItem['errorLog']['N']
+      else:
+        init_session(userID, 'facebook')
+        cur_session = 'welcome'
     else:
       init_session(userID, 'facebook')
       cur_session = 'welcome'
-  else:
-    init_session(userID, 'facebook')
-    cur_session = 'welcome'
 
-  if( inputData['type'] == 'payload' ):
-    if( 'FACEBOOK_WELCOME' in inputData['data']['payload'] ):
-      cur_session = 'welcome'
+    if( inputData['type'] == 'payload' ):
+      if( 'FACEBOOK_WELCOME' in inputData['data']['payload'] ):
+        cur_session = 'welcome'
 
-    elif( 'PERSIST' in inputData['data']['payload'] ):
-      if( _app_updates_check(dataItem) ):
-        convo_data.save_item(userID, 'appversion',\
-          _uxy_core.appconfig['app:version'])
-        return route(userID, 'app_update')
+      elif( 'PERSIST' in inputData['data']['payload'] ):
+        if( _app_updates_check(dataItem) ):
+          convo_data.save_item(userID, 'appversion',\
+            _uxy_core.appconfig['app:version'])
+          return route(userID, 'app_update')
 
-      if( cur_session not in persist.STATE_EXCEPTIONS ):
-        cur_session = persist.ROUTES[inputData['data']['payload']]
-        return route(userID, cur_session)
+        if( cur_session not in persist.STATE_EXCEPTIONS ):
+          cur_session = persist.ROUTES[inputData['data']['payload']]
+          return route(userID, cur_session)
 
-  if( _app_updates_check(dataItem) ):
-    convo_data.save_item(userID, 'appversion',\
-      _uxy_core.appconfig['app:version'])
-    return route(userID, 'app_update')
+    if( _app_updates_check(dataItem) ):
+      convo_data.save_item(userID, 'appversion',\
+        _uxy_core.appconfig['app:version'])
+      return route(userID, 'app_update')
 
-  inputData['errors'] = int(errors)
-  # except Exception as e:
-  #   print('[ROUTE ERROR]: '+str(e))
-  #   cur_session = 'error_fallback'
+    inputData['errors'] = int(errors)
+  except Exception as e:
+    print('[ROUTE ERROR]: '+str(e))
+    cur_session = 'error_fallback'
 
   print('CURSESSION: ')
   print(cur_session)
   return route(userID, cur_session, inputData)
-
 
 
 
