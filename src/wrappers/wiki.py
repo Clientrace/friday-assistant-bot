@@ -29,7 +29,7 @@ class WikiQuery:
     return response.json()
 
 
-  def query_by_pageid(self, pageID):
+  def query_by_pageid(self, pageID, sentenceNum):
     params = {
       'action' : 'query',
       'prop' : 'extracts|revisions',
@@ -38,9 +38,8 @@ class WikiQuery:
       'format' : 'json',
       'formatversion' : 2,
       'redirects' : True,
-      'exintro' : 10,
       'explaintext' : '',
-      'exsentences' : 10
+      'exsentences' : sentenceNum
     }
     response = requests.get(self.HOST_URL, params=params)
     return response.json()

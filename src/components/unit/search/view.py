@@ -10,9 +10,14 @@ def exe(userID, data, response, altResponse, choice, optionMatched, valid, maxRe
   if( not valid ):
     if( maxRetry ):
       return [], valid
+  index = data['data']['text']
+  if( not index.isnum() ):
+    return response, False
 
-  if( optionMatched == 0 ):
-    response = router.route(userID, 'search.view')
+  qresult = json.loads(convo_data.get_item(userID, 'query_cache'))
+  summary = search.get_summary(qresult['results'][index]['pageid'], 10)
+  response = spiel.free_text(summary['extract'], 0)
+  response += router.route(userID, 'view_more')
 
   return response, valid
 

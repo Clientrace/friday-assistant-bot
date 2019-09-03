@@ -63,7 +63,17 @@
       "I found other results."
     ],
     "delay" : 0
+  },
+  "FS-08" : {
+    "description" : "Item View",
+    "data": [
+      "Enter item number you wanna view:"
+    ],
+    "delay" : 0
   }
 }
+
+
+
 
 

@@ -52,13 +52,12 @@ def exe(query, userID):
 
   return None
 
-def get_summary(pageId):
-  summary = wikiQuery.query_by_pageid(pageId)
+def get_summary(pageId, sentenceNum):
+  summary = wikiQuery.query_by_pageid(pageId, sentenceNum)
   return summary['query']['pages'][0]
 
   
     
-
 
 
 
