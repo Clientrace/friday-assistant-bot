@@ -52,13 +52,18 @@
   "FS-06" : {
     "description" : "Query Suggestion",
     "data" : [
-      "Maybe you mean :title:",
-      "I can look up for :title: instead"
-    ]
+      "Maybe you mean \":title:\"",
+      "I can look up for ':title:' instead"
+    ],
+    "delay" : 0
+  },
+  "FS-07" : {
+    "description" : "View more results",
+    "data" : [
+      "I found other results."
+    ],
+    "delay" : 0
   }
 }
-
-
-
 
 

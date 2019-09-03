@@ -32,13 +32,15 @@ class WikiQuery:
   def query_by_pageid(self, pageID):
     params = {
       'action' : 'query',
-      'prop' : 'extracts',
+      'prop' : 'extracts|revisions',
+      'rvprop' : 'content',
       'pageids' : pageID,
       'format' : 'json',
       'formatversion' : 2,
       'redirects' : True,
+      'exintro' : 10,
       'explaintext' : '',
-      'exsentences' : 3
+      'exsentences' : 10
     }
     response = requests.get(self.HOST_URL, params=params)
     return response.json()

@@ -1,0 +1,9 @@
+{
+  "acceptTypes" : ["text"],
+  "content" : ["FS-07"],
+  "optionType" : "quick_reply",
+  "options" : [
+    {"data" : "View More", "syns" : ["view more","view","load","load more"]}
+  ],
+  "retries" : null
+}

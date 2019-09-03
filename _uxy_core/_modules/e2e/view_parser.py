@@ -19,6 +19,7 @@ VIEW_DIR = 'src/components/view/'
 # Get view json
 def get_view(sessionName):
   global VIEW_DIR
+  sessionName = sessionName.replace('.','/')
   viewFile = open(VIEW_DIR+sessionName+'.json').read()
   return json.loads(viewFile)
 
