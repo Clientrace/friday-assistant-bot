@@ -16,7 +16,7 @@
   "ERR-02" : {
     "description" : "User selected option doesn't match the provided set of options",
     "data" : [ 
-      "Please choose from the options provided:" 
+      "Please choose from the options provided." 
     ],
     "delay" : 0
   }

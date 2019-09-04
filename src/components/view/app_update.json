@@ -1,0 +1,14 @@
+{
+  "acceptTypes" : ["text","payload"],
+  "content" : ["FS-04"],
+  "optionType" : "quick_reply",
+  "options" : [
+    {"data" : "Proceed", "syns" : ["proceed","continue"]},
+    {"data" : "View Update", "syns" : ["view","view update"]}
+  ],
+  "retries" : null
+}
+
+
+
+

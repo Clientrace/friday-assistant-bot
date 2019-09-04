@@ -1,0 +1,29 @@
+{
+  "mnemonic" : {
+    "text" : "King Henry Died Unusualy Drinking Chocolate Milk",
+    "description" : "kilo - hecto - deka - *unit - deca - centi - milli"
+  },
+  "kilo" : {
+    "multiplier" : 1000
+  },
+  "hecto" : {
+    "multiplier" : 100
+  },
+  "deca" : {
+    "multiplier" : 10
+  },
+  "deci" : {
+    "multiplier" : 0.1
+  },
+  "centi" : {
+    "multiplier" : 0.01
+  },
+  "milli" : {
+    "multiplier" : 0.001
+  }
+}
+
+
+
+
+

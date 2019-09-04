@@ -9,10 +9,8 @@
   "FS-01" : {
     "description" : "Main message",
     "data" : [
-      "What do you want me to look up and search for you?",
-      "Hollah :firstname:. What do you want me to search?",
-      "Hello. Enter something and I'll search it right away:",
-      "Need help? I can search information for you, what information do you want me to search?"
+      "What do you need me to do?",
+      "What can I do for you?"
     ],
     "delay" : 0
   },
@@ -23,7 +21,60 @@
       "Beep bop, didn't find any article relating to what you mentioned."
     ],
     "delay" : 0
+  },
+  "FS-03" : {
+    "description" : "Inquiry message",
+    "data" : [
+      "What do you wanna know?",
+      "What do you want me to look up and search for you?",
+      "What do you want me to search?",
+      "Alright, enter something and I'll search it right away:",
+      "what information do you want me to search?"
+    ],
+    "delay" : 0
+  },
+  "FS-04" : {
+    "description" : "Update Message",
+    "data" : [
+      "You are using an older version of me. My master updated me. Updating... Beep, bop. bop. bop, beep bop. Version Updated :)",
+      "Error, error, error. Just kidding :P. I have received an update in my system. Updating... Version Updated!",
+      "Beeeeep boooop, my system experienced a chill. Update incomming... Installing.. Version Updated..",
+      "Wait amigo, my creator updated me.. Installing system updates... Version Updated.."
+    ],
+    "delay" : 0
+  },
+  "FS-05" : {
+    "description" : "Result Found",
+    "data" : [
+      "beep, beep, beep. beep, beep, bop. beep, bop, beep, bop. beep, bop, beep, bop. beep. beep, beep, beep. beep, beep, beep."
+    ],
+    "delay" : 0
+  },
+  "FS-06" : {
+    "description" : "Query Suggestion",
+    "data" : [
+      "Maybe you mean \":title:\"",
+      "I can look up for ':title:' instead"
+    ],
+    "delay" : 0
+  },
+  "FS-07" : {
+    "description" : "View more results",
+    "data" : [
+      "I found other results."
+    ],
+    "delay" : 0
+  },
+  "FS-08" : {
+    "description" : "Item View",
+    "data": [
+      "Enter item number you wanna view:"
+    ],
+    "delay" : 0
   }
 }
+
+
+
 
 

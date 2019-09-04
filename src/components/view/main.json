@@ -1,9 +1,9 @@
 {
   "acceptTypes" : ["any"],
   "content" : ["FS-01"],
-  "optionType" : "text",
-  "options" : [],
+  "optionType" : "btn",
+  "options" : [
+    {"type" : "postback", "buttonName" : "Search", "syns" : ["search"]}
+  ],
   "retries" : null
 }
-
-

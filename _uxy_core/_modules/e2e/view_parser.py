@@ -19,6 +19,7 @@ VIEW_DIR = 'src/components/view/'
 # Get view json
 def get_view(sessionName):
   global VIEW_DIR
+  sessionName = sessionName.replace('.','/')
   viewFile = open(VIEW_DIR+sessionName+'.json').read()
   return json.loads(viewFile)
 
@@ -75,7 +76,7 @@ def exe(userID, sessionName, userInput):
       optionPos = 0
       if( view['optionType'] == 'quick_reply' or view['optionType'] == 'btn' ):
         for option in view['options']:
-          for syn in option['options']:
+          for syn in option['syns']:
             if( inputData == syn or ' ' + syn + ' ' in inputData ):
               matchedOption = optionPos
           
