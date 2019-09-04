@@ -25,6 +25,7 @@
   "FS-03" : {
     "description" : "Inquiry message",
     "data" : [
+      "What do you wanna know?",
       "What do you want me to look up and search for you?",
       "What do you want me to search?",
       "Alright, enter something and I'll search it right away:",
