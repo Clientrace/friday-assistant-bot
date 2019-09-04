@@ -59,20 +59,35 @@ class WikiQuery:
       query = query.replace(pharse,'')
     return query
 
+  def get_description(self, pageids):
+    concatPageIds = pageids[0]
+    for pid in pageids[1:]:
+      concatPageIds += '|' + pid
+    params = {
+      'action' : 'query',
+      'prop' : 'categories|description',
+      'clcategories' : 'Category:All article disambiguation pages|Category:All disambiguation pages',
+      'format' : 'json',
+      'pageids' : concatPageIds
+    }
+    response = requests.get(self.HOST_URL, params=params)
+    return response.json()
+
+
   def search(self, query, resultsNum=10, suggest=False):
     params = {
       'action' : 'query',
       'format' : 'json',
       'list' : 'search',
+      'prop' : 'description|categories',
       'srprop' : '',
       'srlimit' : resultsNum,
-      'srsearch' : query
+      'srsearch' : query,
+      'srsort' : 'relevance'
     }
     if( suggest ):
       params['srinfo'] = 'suggestion'
 
     response = requests.get(self.HOST_URL, params=params)
     return response.json()
-
-
 
