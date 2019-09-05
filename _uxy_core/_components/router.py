@@ -124,6 +124,9 @@ def route(userID, sessionName, data=None):
   return responses
 
 def _app_updates_check(session_data):
+  if( not session_data ):
+    return False
+
   if( 'appversion' not in session_data ):
     return True
 
@@ -140,6 +143,7 @@ def exe(userID, source, inputData, intentName):
 
   user_session_data = get_user_session(userID)
   try:
+    dataItem = None
     if( 'Item' in user_session_data ):
       dataItem = user_session_data['Item']
       if( 'errorLog' in dataItem and 'session' in dataItem ):

@@ -20,8 +20,8 @@
   "app:description": "Assistant chatbot. Giving you the information you needed.",
   "app:name": "friday",
   "app:runtime": "python",
-  "app:stage": "dev",
-  "app:version": "1.0.0",
+  "app:stage": "prod",
+  "app:version": "1.0.1",
   "aws:config": {
     "dynamodb:session-table": {
       "rcu": 5,
