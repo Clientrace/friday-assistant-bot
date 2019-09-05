@@ -144,6 +144,7 @@ def exe(userID, source, inputData, intentName):
   user_session_data = get_user_session(userID)
   try:
     dataItem = None
+    errors = 0
     if( 'Item' in user_session_data ):
       dataItem = user_session_data['Item']
       if( 'errorLog' in dataItem and 'session' in dataItem ):
