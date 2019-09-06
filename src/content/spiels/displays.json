@@ -10,14 +10,15 @@
     "description" : "Main message",
     "data" : [
       "What do you need me to do?",
-      "What can I do for you?"
+      "What can I do for you?",
+      "Holah amigo, friday at your service. What can I do 4 u?"
     ],
     "delay" : 0
   },
   "FS-02" : {
     "description" : "Failed to sesarch article",
     "data" : [
-      "I can't find any article related to that. Try a simpler one.",
+      "I can't find any article related to that.",
       "Beep bop, didn't find any article relating to what you mentioned."
     ],
     "delay" : 0
@@ -68,13 +69,11 @@
   "FS-08" : {
     "description" : "Item View",
     "data": [
-      "Enter item number you wanna view:"
+      "Continue?",
+      "Still interested?"
     ],
     "delay" : 0
   }
 }
-
-
-
 
 

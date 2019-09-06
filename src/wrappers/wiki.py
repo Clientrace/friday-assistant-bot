@@ -13,7 +13,7 @@ class WikiQuery:
 
 
 
-  def query_by_title(self, title):
+  def query_by_title(self, title, snum=3):
     params = {
       'action' : 'query',
       'prop' : 'extracts',
@@ -22,7 +22,7 @@ class WikiQuery:
       'formatversion' : 2,
       'redirects' : True,
       'explaintext' : '',
-      'exsentences' : 3
+      'exsentences' : snum
     }
 
     response = requests.get(self.HOST_URL, params=params)

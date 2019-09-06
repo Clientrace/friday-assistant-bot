@@ -15,6 +15,7 @@ from _uxy_core._modules.e2e import view_parser
 from _uxy_core._components import convo_data
 from _uxy_core._components import spiel
 from _uxy_core._components import persist
+from src._functions import shortcuts
 from datetime import datetime, timedelta
 
 global DYNAMODB
@@ -171,6 +172,11 @@ def exe(userID, source, inputData, intentName):
           cur_session = persist.ROUTES[inputData['data']['payload']]
           return route(userID, cur_session)
 
+    elif( inputData['type'] == 'text' ):
+      shortcut = shortcuts.read(inputData['data']['text'])
+      if( shortcut ):
+        cur_session = shortcut
+
     if( _app_updates_check(dataItem) ):
       convo_data.save_item(userID, 'appversion',\
         _uxy_core.appconfig['app:version'])
@@ -184,6 +190,5 @@ def exe(userID, source, inputData, intentName):
   print('CURSESSION: ')
   print(cur_session)
   return route(userID, cur_session, inputData)
-
 
 

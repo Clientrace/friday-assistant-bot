@@ -13,7 +13,7 @@ def exe(userID, data, response, altResponse, choice, optionMatched, valid, maxRe
     if( maxRetry ):
       return [], valid
 
-  qresult = search.exe(data['data']['text'])
+  qresult = search.search_article(data['data']['text'])
   if( len(qresult) == 0 ):
     response = spiel.get_display(userID, 'FS-02')
     return response, valid
@@ -24,7 +24,7 @@ def exe(userID, data, response, altResponse, choice, optionMatched, valid, maxRe
     response += spiel.free_text('['+r['title']+'] '+r['description'], 0)
 
   response += spiel.free_text('You can read more about the article by typing:\
-    \n#READ then the article name. Ex: #READ ' + topResult, 0)
+    \n#read then the article name. Example: #read ' + topResult, 0)
   response += router.route(userID, 'main')
   return response, valid
 

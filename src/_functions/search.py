@@ -10,57 +10,8 @@ from _uxy_core.utility.api_wrappers.facebook import Facebook
 
 wq = WikiQuery()
 
-def parse_wikimarkup(content):
-  responses = []
-  print(content)
-  headerRegEx = r'\=\=.*?\=\='
-  topicRegEx = r'\[\[.*?\]\]'
-  for section in content.split('\n\n')[1:]:
-    articleTitles = re.findall(headerRegEx, section)
-    if( len(articleTitles) > 0 ):
-      if( 'see also' not in articleTitles[0].replace('=','').strip().lower() ):
-        msgRes = 'In ' + articleTitles[0].replace('=','').strip()
-        for title in articleTitles[1:]:
-          msgRes += ', ' + title.replace('=','').strip()
-        msgRes += '\n'
-        articleTopics = re.findall(topicRegEx, section)
-        if( len(articleTopics) > 0 ):
-          msgRes += articleTopics[0].replace('[[','').replace(']]','')
-          for topic in articleTopics[1:]:
-            topic = topic.replace('[[', '').replace(']]', '')
-            msgRes += ', ' + topic
-          msgRes += '.'
-        responses.append(msgRes)
-    else: 
-      articleTopics = re.findall(topicRegEx, section)
-      if( len(articleTopics) > 0 ):
-        msgRes = articleTopics[0].replace('[[','').replace(']]','')
-        for topic in articleTopics:
-          msgRes += ', ' + topic.replace('[[','').replace(']]','')
-        msgRes += '.'
-        responses.append(msgRes)
-  return responses
-
-def find_disambiguation_page(pageIDs, pageInfos):
-  print('PAGE INFOS')
-  print(pageInfos)
-  for pid in pageIDs:
-    if( 'categories' in pageInfos[pid] ):
-      page = wq.query_by_pageid(pid, 1)['query']['pages'][0]
-      return page
-  return None
-
-def check_result_relevance(querycheck, titlecheck):
-  if( len(querycheck) > len(titlecheck) ):
-    if titlecheck in querycheck:
-      return True
-
-  else:
-    if querycheck in titlecheck:
-      return True
-
-  return False
-
+global WORDS_PER_MSG
+WORDS_PER_MSG = 40
 
 def build_query_response(query, pageIDs, pageInfos):
   responses = []
@@ -76,7 +27,7 @@ def build_query_response(query, pageIDs, pageInfos):
   return responses
 
 
-def exe(query):
+def search_article(query):
   pages = wq.search(query, 5)
   pageIDs = []
   for res in pages['query']['search']:
@@ -87,8 +38,22 @@ def exe(query):
   return responses
 
 
-  
+def read_article(query):
+  global WORDS_PER_MSG
 
+  page = wq.query_by_title(query, 10)['query']['pages'][0]
+  if( 'missing' in page ):
+    return None
 
+  if( 'extract' not in page ):
+    return None
 
+  pageContent = page['extract']
+  words = pageContent.split()
+  result = ["".join(words[i : i+WORDS_PER_MSG])\
+     for i in range(0, len(words), WORDS_PER_MSG)]
+
+  return result
+ 
+ 
 
