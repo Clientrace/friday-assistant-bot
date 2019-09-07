@@ -41,7 +41,13 @@ def search_article(query):
 def read_article(query):
   global WORDS_PER_MSG
 
-  page = wq.query_by_title(query, 10)['query']['pages'][0]
+  page = wq.query_by_title(query, 10)['query']
+  if( 'pages' not in page ):
+    return None
+
+  page = page['pages'][0]
+
+  print(page)
   if( 'missing' in page ):
     return None
 
@@ -56,4 +62,3 @@ def read_article(query):
   return result
  
  
-
