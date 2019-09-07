@@ -14,7 +14,8 @@ def exe(userID, data, response, altResponse, choice, optionMatched, valid, maxRe
       return [], valid
 
   response = []
-  result = search.read_article(data['data']['text'])
+  userQuery = data['data']['text'].replace('#read').strip()
+  result = search.read_article(userQuery)
   if( result ):
     response += spiel.free_text(result.pop(0), 0)
     if( len(result) > 0 ):

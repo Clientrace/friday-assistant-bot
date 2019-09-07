@@ -42,12 +42,11 @@ def read_article(query):
   global WORDS_PER_MSG
 
   page = wq.query_by_title(query, 10)['query']
+  print(page)
   if( 'pages' not in page ):
     return None
 
   page = page['pages'][0]
-
-  print(page)
   if( 'missing' in page ):
     return None
 
