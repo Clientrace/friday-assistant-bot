@@ -55,7 +55,7 @@ def read_article(query):
 
   pageContent = page['extract']
   words = pageContent.split()
-  result = ["".join(words[i : i+WORDS_PER_MSG])\
+  result = [" ".join(words[i : i+WORDS_PER_MSG])\
      for i in range(0, len(words), WORDS_PER_MSG)]
 
   return result

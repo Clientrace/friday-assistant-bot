@@ -1,5 +1,5 @@
 {
-  "acceptTypes" : ["text"],
+  "acceptTypes" : ["any"],
   "content" : ["FS-08"],
   "optionType" : "quick_reply",
   "options" : [
