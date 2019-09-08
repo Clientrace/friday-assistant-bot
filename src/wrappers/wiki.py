@@ -16,7 +16,8 @@ class WikiQuery:
   def query_by_title(self, title, snum=3):
     params = {
       'action' : 'query',
-      'prop' : 'extracts',
+      'prop' : 'extracts|categories',
+      'clcategories' : 'Category:All article disambiguation pages|Category:All disambiguation pages',
       'titles' : title,
       'format' : 'json',
       'formatversion' : 2,

@@ -6,14 +6,17 @@ from src.wrappers.wiki import WikiQuery
 wq = WikiQuery()
 
 
-page = wq.query_by_title('iron man', 10)
+page = wq.query_by_title('synthesis', 10)
+print(json.dumps(page,indent=2))
+
+
 # content = page['query']['pages'][0]['extract']
-content = "2"
-words = content.split()
-n = 40
-responses = [" ".join(words[i:i+n]) for i in range(0, len(words), n)]
-for r in responses:
-  print(r+'\n')
+# content = "2"
+# words = content.split()
+# n = 40
+# responses = [" ".join(words[i:i+n]) for i in range(0, len(words), n)]
+# for r in responses:
+#   print(r+'\n')
 
 
 # pages = wq.search('synthesis')

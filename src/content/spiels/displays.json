@@ -60,9 +60,9 @@
     "delay" : 0
   },
   "FS-07" : {
-    "description" : "View more results",
+    "description" : "Found multiple results.",
     "data" : [
-      "I found other results."
+      "I found multiple results. Here are the list of articles"
     ],
     "delay" : 0
   },

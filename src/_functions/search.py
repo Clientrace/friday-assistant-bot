@@ -47,17 +47,30 @@ def read_article(query):
     return None
 
   page = page['pages'][0]
+
+  if( 'categories' in page ):
+    return {
+      'status' : 'vague'
+    }
+
   if( 'missing' in page ):
-    return None
+    return {
+      'status' : 'missing'
+    }
 
   if( 'extract' not in page ):
-    return None
+    return {
+      'status' : 'missing'
+    }
 
   pageContent = page['extract']
   words = pageContent.split()
   result = [" ".join(words[i : i+WORDS_PER_MSG])\
      for i in range(0, len(words), WORDS_PER_MSG)]
 
-  return result
+  return {
+    'status' : 'OK',
+    'result' : result
+  }
  
  
