@@ -15,24 +15,19 @@ def exe(userID, data, response, altResponse, choice, optionMatched, valid, maxRe
 
   article_cache = convo_data.get_item(userID, 'article_cache')
   article_cache = json.loads(article_cache)
-
-  print('OPTION MATHCED: ')
-  print(optionMatched)
-  # User Clicked Next
-  if( optionMatched == 0 ):
-    response += spiel.free_text(article_cache.pop(0), 0)
-    print('RESPONSE: ')
-    print(response)
-    if( len(article_cache) > 0 ):
-      response += router.route(userID, 'article.read')
-      convo_data.save_item(userID, 'article_cache', json.dumps(article_cache))
-    else:
-      response = router.route(userID, 'main')
-  
-  if( optionMatched == 1):
-    response = router.route(userID, "main")
-
+  response += spiel.free_text(article_cache.pop(0), 0)
+  print("LENGHT: ")
+  print(len(article_cache))
+  if( len(article_cache) > 0 ):
+    print("ROUTING TO ARTICLE CONTINUE")
+    response += router.route(userID, 'article.continue')
+    convo_data.save_item(userID, 'article_cache', json.dumps(article_cache))
+  else:
+    print("ROUTING TO MAIN")
+    response += router.route(userID, 'main')
 
   return response, valid
+
+
 
 

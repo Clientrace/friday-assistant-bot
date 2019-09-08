@@ -1,10 +1,7 @@
 {
   "acceptTypes" : ["any"],
-  "content" : ["FS-08"],
-  "optionType" : "quick_reply",
-  "options" : [
-    {"data" : "Next", "syns" : ["next", "nxt"]},
-    {"data" : "Done", "syns" : ["done", "exit"]}
-  ],
+  "content" : [],
+  "optionType" : "text",
+  "options" : [],
   "retries" : null
 }
