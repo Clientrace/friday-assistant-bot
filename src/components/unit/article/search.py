@@ -17,7 +17,9 @@ def exe(userID, data, response, altResponse, choice, optionMatched, valid, maxRe
   userQuery = data['data']['text'].replace('#read','').strip()
   result = search.read_article(userQuery)
   if( result['status'] == 'OK' ):
-    response += spiel.free_text(result.pop(0), 0)
+    print('RESULT')
+    print(result)
+    response += spiel.free_text(result['result'].pop(0), 0)
     if( len(result) > 0 ):
       response += router.route(userID, 'article.continue')
       convo_data.save_item(userID, 'article_cache', json.dumps(result))
