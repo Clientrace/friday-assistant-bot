@@ -21,7 +21,7 @@
   "app:name": "friday",
   "app:runtime": "python",
   "app:stage": "dev",
-  "app:version": "1.0.1",
+  "app:version": "1.0.2",
   "aws:config": {
     "dynamodb:session-table": {
       "rcu": 5,
