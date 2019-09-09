@@ -82,11 +82,8 @@
     "description" : "Dictionary",
     "data" : [
       "Enter the word:",
-      "Beep bop, enter something:"
+      "Beep bop, enter word:"
     ],
     "delay" : 0
   }
 }
-
-
-
