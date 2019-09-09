@@ -70,10 +70,23 @@
     "description" : "Item View",
     "data": [
       "Continue?",
-      "Still interested?"
+      "Continue reading?",
+      "Read more?",
+      "View more?",
+      "More?",
+      "See more?"
+    ],
+    "delay" : 0
+  },
+  "FS-09" : {
+    "description" : "Dictionary",
+    "data" : [
+      "Enter the word:",
+      "Beep bop, enter something:"
     ],
     "delay" : 0
   }
 }
+
 
 

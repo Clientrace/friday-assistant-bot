@@ -3,7 +3,11 @@
   "content" : ["FS-01"],
   "optionType" : "btn",
   "options" : [
-    {"type" : "postback", "buttonName" : "Search", "syns" : ["search"]}
+    {"type" : "postback", "buttonName" : "Search", "syns" : ["search"]},
+    {"type" : "postback", "buttonName" : "Dictionary", "syns" : ["dictionary"]}
   ],
   "retries" : null
 }
+
+
+
