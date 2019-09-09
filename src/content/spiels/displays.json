@@ -85,5 +85,15 @@
       "Beep bop, enter word:"
     ],
     "delay" : 0
+  },
+  "FS-10" : {
+    "description" : "Malformed dictionary query",
+    "data" : [
+      "Use only one word at a time.",
+      "You entered multiple words, just enter one:"
+    ],
+    "delay" : 0
   }
 }
+
+

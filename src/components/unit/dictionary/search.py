@@ -12,6 +12,12 @@ def exe(userID, data, response, altResponse, choice, optionMatched, valid, maxRe
 
   response = []
   userQuery = data['data']['text']
+
+  if( len(userQuery.split()) > 1 ):
+    response = spiel.text(userID, 'FS-10')
+    response += router.route(userID, 'dictionary.search')
+    return response, valid
+
   result = dictionary.get(userQuery)
   if( result ):
     response += spiel.free_text(result.pop(0), 0)
@@ -25,5 +31,6 @@ def exe(userID, data, response, altResponse, choice, optionMatched, valid, maxRe
     response += router.route(userID, 'main')
 
   return response, valid
+
 
 
