@@ -21,12 +21,16 @@ def exe(userID, data, response, altResponse, choice, optionMatched, valid, maxRe
   response = []
   topResult = qresult[0]['title']
   for r in qresult:
-    response += spiel.free_text(''+r['title']+' : '+r['description'], 0)
+    # response += spiel.free_text(''+r['title']+' - '+r['description'], 0)
+    response += spiel.btn_menu(''+r['title']+' - '+r['description'],
+      [{"type" : "postback", "buttonName" : "READ", "payload" : "#read "+r['title'], "syns" : []}]
+    )
 
   response += spiel.free_text('You can read more about the article by typing:\
     \n#read then the article name. Example: #read ' + topResult, 0)
   response += router.route(userID, 'main')
   return response, valid
+
 
 
 

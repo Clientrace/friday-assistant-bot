@@ -47,9 +47,14 @@ def send_btn_template(fb, blueprint):
   buttons = []
   for option in options:
     if( option['type'] == 'postback' ):
-      buttons.append(
-        ['postback', option['buttonName']]
-      )
+      if( 'payload' in option):
+        buttons.append(
+          ['postback', option['buttonName'], option['payload']]
+        )
+      else:
+        buttons.append(
+          ['postback', option['buttonName'], None]
+        )
     
     if( option['type'] == 'web_url' ):
       buttons.append(

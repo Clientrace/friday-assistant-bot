@@ -181,11 +181,18 @@ class Facebook:
     buttonData = []
     for button in buttons:
       if(list(button)[0]=='postback'):
-        buttonData.append({
-          'title' : list(button)[1],
-          'type' : 'postback',
-          'payload' : list(button)[1]
-        })
+        if(list(button)[2]):
+          buttonData.append({
+            'title' : list(button)[1],
+            'type' : 'postback',
+            'payload' : list(button)[2]
+          })
+        else:
+          buttonData.append({
+            'title' : list(button)[1],
+            'type' : 'postback',
+            'payload' : list(button)[1]
+          })
 
       if(list(button)[0]=='web_url'):
         buttonData.append({
@@ -214,5 +221,4 @@ class Facebook:
     }
 
     return self.http_post(route,payload)
-
 

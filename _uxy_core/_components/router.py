@@ -172,6 +172,12 @@ def exe(userID, source, inputData, intentName):
           cur_session = persist.ROUTES[inputData['data']['payload']]
           return route(userID, cur_session)
 
+      elif( inputData['type'] == 'payload' ):
+        shortcut = shortcuts.read(inputData['data']['payload'])
+        if( shortcut ):
+          inputData['data']['text'] = inputData['data']['payload']
+          cur_session = shortcut
+
     elif( inputData['type'] == 'text' ):
       shortcut = shortcuts.read(inputData['data']['text'])
       if( shortcut ):
