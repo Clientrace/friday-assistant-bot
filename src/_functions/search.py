@@ -24,7 +24,6 @@ def build_query_response(query, pageIDs, pageInfos):
           'description' : description
         })
       else:
-        description = pageInfos[pageID]['description']
         responses.append({
           'title' : pageInfos[pageID]['title'],
           'description' : 'No description found.'
