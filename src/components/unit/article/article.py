@@ -15,7 +15,7 @@ def exe(userID, data, response, altResponse, choice, optionMatched, valid, maxRe
 
   qresult = search.search_article(data['data']['text'])
   if( len(qresult) == 0 ):
-    response = spiel.get_display(userID, 'FS-02')
+    response = spiel.text(userID, 'FS-02')
     return response, valid
 
   response = []

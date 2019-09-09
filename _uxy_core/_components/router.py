@@ -17,6 +17,7 @@ from _uxy_core._components import spiel
 from _uxy_core._components import persist
 from src._functions import shortcuts
 from datetime import datetime, timedelta
+from src.util import appmetric
 
 global DYNAMODB
 DYNAMODB = Dynamodb(
@@ -53,7 +54,7 @@ def init_session(userID,platform):
       }
     }
   )
-
+  appmetric.add_user()
 
 # Custom set rotue
 def set_route(userID, session):

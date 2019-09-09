@@ -23,7 +23,12 @@ def build_query_response(query, pageIDs, pageInfos):
           'title' : pageInfos[pageID]['title'],
           'description' : description
         })
-
+      else:
+        description = pageInfos[pageID]['description']
+        responses.append({
+          'title' : pageInfos[pageID]['title'],
+          'description' : 'No description found.'
+        })
   return responses
 
 
@@ -74,3 +79,6 @@ def read_article(query):
   }
  
  
+
+
+
