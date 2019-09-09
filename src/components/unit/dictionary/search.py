@@ -32,5 +32,3 @@ def exe(userID, data, response, altResponse, choice, optionMatched, valid, maxRe
 
   return response, valid
 
-
-
