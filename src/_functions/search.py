@@ -38,9 +38,12 @@ def search_article(query):
   for res in pages['query']['search']:
     pageIDs.append(str(res['pageid']))
 
-  pageInfos = wq.get_description(pageIDs)['query']['pages']
-  responses = build_query_response(query, pageIDs, pageInfos)
-  return responses
+  if( len(pageIDs) > 0 ):
+    pageInfos = wq.get_description(pageIDs)['query']['pages']
+    responses = build_query_response(query, pageIDs, pageInfos)
+    return responses
+
+  return None
 
 
 def read_article(query):
