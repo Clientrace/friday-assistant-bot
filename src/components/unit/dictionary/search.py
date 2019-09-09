@@ -27,7 +27,7 @@ def exe(userID, data, response, altResponse, choice, optionMatched, valid, maxRe
     else:
       response += router.route(userID, 'main')
   else:
-    response = spiel.text(userID, 'FS-07')
+    response = spiel.text(userID, 'FS-06')
     response += router.route(userID, 'main')
 
   return response, valid

@@ -52,10 +52,9 @@
     "delay" : 0
   },
   "FS-06" : {
-    "description" : "Query Suggestion",
+    "description" : "Word not found",
     "data" : [
-      "Maybe you mean \":title:\"",
-      "I can look up for ':title:' instead"
+      "I'm sorry pal, I can't find that word on my database. I'll ask my creator for that one."
     ],
     "delay" : 0
   },
@@ -95,5 +94,6 @@
     "delay" : 0
   }
 }
+
 
 
