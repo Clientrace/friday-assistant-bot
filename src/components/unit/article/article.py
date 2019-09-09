@@ -16,6 +16,7 @@ def exe(userID, data, response, altResponse, choice, optionMatched, valid, maxRe
   qresult = search.search_article(data['data']['text'])
   if( not qresult ):
     response = spiel.text(userID, 'FS-02')
+    response += router.route(userID, 'main')
     return response, valid
 
   response = []
