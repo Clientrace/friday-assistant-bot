@@ -11,14 +11,9 @@ def exe(userID, data, response, altResponse, choice, optionMatched, valid, maxRe
       return [], valid
 
   if( optionMatched == 0 ):
-    response = router.route(userID, 'article.article')
-
-  if( optionMatched == 1 ):
-    response = router.route(userID, 'dictionary.search')
-
-  if( optionMatched == 2 ):
-    response = router.route(userID, 'reference.reference')
+    response = router.route(userID, 'reference.ptoe')
 
   return response, valid
 
   
+

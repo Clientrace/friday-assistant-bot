@@ -2,18 +2,13 @@
 import json
 import time
 from src._functions import search
-# from src.wrappers.wiki import WikiQuery
-
-# wq = WikiQuery()
+# from src.util import wiki
+from src.wrappers.wiki import WikiQuery
 
 
 # page = wq.query_by_title('synthesis', 10)
 # page = wq.search('javac')
 # print(json.dumps(page,indent=2))
-
-p = search.search_article('javac')
-print(p)
-
 
 # content = page['query']['pages'][0]['extract']
 # content = "2"

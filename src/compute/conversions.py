@@ -8,5 +8,8 @@ class MetricConversion():
   """
 
 
+  def metric(self, base, out):
+    pass
+    
 
-
+   

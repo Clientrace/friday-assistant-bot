@@ -4,10 +4,8 @@
   "optionType" : "btn",
   "options" : [
     {"type" : "postback", "buttonName" : "Search", "syns" : ["search"]},
-    {"type" : "postback", "buttonName" : "Dictionary", "syns" : ["dictionary"]}
+    {"type" : "postback", "buttonName" : "Dictionary", "syns" : ["dictionary"]},
+    {"type" : "postback", "buttonName" : "Reference", "syns" : ["reference"]}
   ],
   "retries" : null
 }
-
-
-

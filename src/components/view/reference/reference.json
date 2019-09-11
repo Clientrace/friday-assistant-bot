@@ -1,0 +1,10 @@
+{
+  "acceptTypes" : ["any"],
+  "content" : ["FS-11"],
+  "optionType" : "btn",
+  "options" : [
+    { "type" : "postback", "buttonName" : "Table of Elements", "syns" : ["table of elements"]}
+  ],
+  "retries" : null
+}
+

@@ -96,8 +96,19 @@
       "You entered multiple words, just enter one:"
     ],
     "delay" : 0
+  },
+  "FS-11" : {
+    "description" : "Reference Menu",
+    "data" : [
+      "Reference menu:"
+    ],
+    "delay" : 0
+  },
+  "FS-12" : {
+    "description" : "Periodic Table of Elements Reference",
+    "data" : [
+      "Enter an element (You can enter the element name, number, or the element symbol. Ex: Hydrogen/H): "
+    ],
+    "delay" : 0
   }
 }
-
-
-
