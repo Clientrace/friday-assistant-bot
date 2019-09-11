@@ -1,5 +1,5 @@
 """
-Periodic Table of Elements Reference
+Element Description
 """
 
 from _uxy_core._components import router
@@ -14,16 +14,7 @@ def exe(userID, data, response, altResponse, choice, optionMatched, valid, maxRe
     if( maxRetry ):
       return [], valid
 
-  res = ptoe.get(data['data']['text'].lower())
-  if( res ):
-    response = spiel.free_text(res['header'], 0)
-    response += spiel.btn_menu(res['info'],
-      [{"type" : "postback", "buttonName" : "Description", "payload" : "#elementDesc "+res['element'], "syns" : []}]
-    )
-    convo_data.save_item(userID, 'query_cache', res['info'])
-
   return response, valid
   
-
 
 
