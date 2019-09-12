@@ -20,10 +20,10 @@ def exe(userID, data, response, altResponse, choice, optionMatched, valid, maxRe
     response += spiel.btn_menu(res['info'],
       [{"type" : "postback", "buttonName" : "Description", "payload" : "#elementDesc "+res['element'], "syns" : []}]
     )
-    convo_data.save_item(userID, 'query_cache', res['info'])
 
   return response, valid
   
+
 
 
 

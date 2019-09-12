@@ -7,8 +7,8 @@ def read(query):
     if( '#read' in words[0].lower() ):
       return 'article.search'
 
+    if( '#elementDesc' + words[0].lower() ):
+      return 'reference.ptoedesc'
+
   return None
-
-
-
 

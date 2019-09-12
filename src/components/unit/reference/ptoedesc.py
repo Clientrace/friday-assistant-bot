@@ -14,7 +14,11 @@ def exe(userID, data, response, altResponse, choice, optionMatched, valid, maxRe
     if( maxRetry ):
       return [], valid
 
-  return response, valid
-  
+  userQuery = data['data']['text'].replace('#elementDesc','').strip()
+  res = ptoe.get(userQuery.lower())
+  if( res ):
+    response = spiel.free_text(res['description'], 0)
+    response += router.route(userID, 'reference.ptoe')
 
+  return response, valid
 
