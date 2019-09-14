@@ -16,8 +16,8 @@ def exe(userID, data, response, altResponse, choice, optionMatched, valid, maxRe
   if( optionMatched == 1 ):
     response = router.route(userID, 'dictionary.search')
 
-  if( optionMatched == 2 ):
-    response = router.route(userID, 'reference.reference')
+  # if( optionMatched == 2 ):
+  #   response = router.route(userID, 'reference.reference')
 
   return response, valid
 

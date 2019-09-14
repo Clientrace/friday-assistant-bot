@@ -9,13 +9,14 @@
   "FS-01" : {
     "description" : "Main message",
     "data" : [
-      "What do you need me to do?",
-      "What can I do for you?",
-      "What can I do for you?",
-      "What can I do for you?",
-      "What can I do for you?",
-      "Holah amigo, friday at your service. What can I do 4 u?",
-      "Yo :firstname:, how can I help u?"
+      "What do you need me to do?\n(Search, Dictionary)",
+      "What can I do for you?\n(Search, Dictionary)",
+      "What can I do for you?\n(Search, Dictionary)",
+      "What can I do for you?\n(Search, Dictionary)",
+      "What can I do for you?\n(Search, Dictionary)",
+      "Holah amigo, friday at your service. What can I do 4 u?\n(Search, Dictionary)",
+      "Kon'nichiwa tomodachi, friday at your service. What can I do for you?\n(Search, Dictionary)",
+      "Hello :firstname:, how can I help u?\n(Search, Dictionary)"
     ],
     "delay" : 0
   },
