@@ -40,24 +40,17 @@
     "region": "ap-southeast-1"
   },
   "chatbot:config": {
-    "URLsToWhiteList": [],
-    "enable_menu": false,
+    "URLsToWhiteList": [
+      "https://d6mcetnpt9x9u.cloudfront.net/"
+    ],
+    "enable_menu": true,
     "persistent_menu": {
       "call_to_actions": [
         {
-          "payload": "PERSIST_OPTION-1",
-          "title": "OPTION-1",
-          "type": "postback"
-        },
-        {
-          "payload": "PERSIST_OPTION-2",
-          "title": "OPTION-2",
-          "type": "postback"
-        },
-        {
-          "payload": "PERSIST_OPTION-3",
-          "title": "OPTION-3",
-          "type": "postback"
+          "type": "web_url",
+          "title": "Info",
+          "url" : "https://d6mcetnpt9x9u.cloudfront.net/",
+          "webview_height_ratio": "full"
         }
       ],
       "composer_input_disabled": false,
