@@ -15,15 +15,15 @@ def exe(userID, data, response, altResponse, choice, optionMatched, valid, maxRe
     if( maxRetry ):
       return [], valid
 
-  res = ptoe.get(data['data']['text'].lower())
+  res = ptoe.get(data['data']['text'].lower().replace('#element',''))
   if( res ):
     response = spiel.free_text(res['header'], 0)
     response += spiel.btn_menu(res['info'],
       [{"type" : "postback", "buttonName" : "Description", "payload" : "#elementDesc "+res['element'], "syns" : []}]
     )
+    response += router.route(userID, 'main')
 
   return response, valid
   
-
 
 

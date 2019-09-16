@@ -16,6 +16,7 @@ ROUTES = {
   # Define here the persistent menu payload and routes
   # example:
   # 'PERSIST_MAIN_MENU' : 'main'
+  'PERSIST_MAIN' : 'main'
 }
 
 
@@ -24,6 +25,5 @@ STATE_EXCEPTIONS = [
   # example:
   # 'main'
 ]
-
 
 
