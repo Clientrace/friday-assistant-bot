@@ -53,8 +53,9 @@
           "webview_height_ratio": "full"
         },
         {
-          "type" : "postback",
-          "payload" : "PERSIST_MAIN"
+          "type": "postback",
+          "title": "Main Menu",
+          "payload": "PERSIST_MAIN"
         }
       ],
       "composer_input_disabled": false,
