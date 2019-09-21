@@ -85,8 +85,8 @@
   "FS-09" : {
     "description" : "Dictionary",
     "data" : [
-      "Enter the word:",
-      "Beep bop, enter word:"
+      "Enter a word:",
+      "Beep bop, enter a word:"
     ],
     "delay" : 0
   },
