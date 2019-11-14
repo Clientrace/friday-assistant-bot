@@ -1,0 +1,12 @@
+{
+  "acceptTypes" : ["any"],
+  "content" : ["FS-13"],
+  "optionType" : "btn",
+  "options" : [
+    {"data" : "Basic", "syns" : ["Basic"]},
+    {"data" : "Combination", "syns" : ["Combination"]}
+  ],
+  "retries" : null
+}
+
+

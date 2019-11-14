@@ -1,0 +1,11 @@
+{
+  "accepTypes" : ["any"],
+  "content" : ["FS-14"],
+  "optionType" : "quick_reply",
+  "options" : [
+    {"data" : "Hiragana", "syns" : ["hiragana"]},
+    {"data" : "Katakana", "syns" : ["katakana"]}
+  ],
+  "retries" : null
+}
+

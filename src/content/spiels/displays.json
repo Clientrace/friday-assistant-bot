@@ -111,5 +111,21 @@
       "Enter an element (You can enter the element name, number, or the element symbol. Ex: Hydrogen/H): "
     ],
     "delay" : 0
+  },
+  "FS-13" : {
+    "description" : "Nihongo Quiz Menu",
+    "data" : [
+      "Hi, you can practice hiragana and katana with me. Which do you want to practice?"
+    ],
+    "delay" : 0
+  },
+  "FS-14" : {
+    "description" : "Quiz Spiel",
+    "data" : [
+      "Choose from the options below:"
+    ],
+    "delay" : 0
   }
 }
+
+

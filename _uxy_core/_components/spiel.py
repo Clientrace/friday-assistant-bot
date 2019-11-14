@@ -126,7 +126,6 @@ def quick_reply(userID, displayID, options):
     'delay' : display['delay']
   }]
 
-
 # Generic Button Template Response
 def btn_menu(text, options):
   """ 
