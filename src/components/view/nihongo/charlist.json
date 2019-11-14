@@ -1,7 +1,7 @@
 {
   "acceptTypes" : ["any"],
   "content" : ["FS-13"],
-  "optionType" : "btn",
+  "optionType" : "quick_reply",
   "options" : [
     {"data" : "Basic", "syns" : ["Basic"]},
     {"data" : "Combination", "syns" : ["Combination"]}
