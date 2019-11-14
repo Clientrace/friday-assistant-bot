@@ -1,5 +1,5 @@
 {
-  "accepTypes" : ["any"],
+  "acceptTypes" : ["any"],
   "content" : ["FS-14"],
   "optionType" : "quick_reply",
   "options" : [
