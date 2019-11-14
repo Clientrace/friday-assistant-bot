@@ -18,9 +18,12 @@ def exe(userID, data, response, altResponse, choice, optionMatched, valid, maxRe
     convo_data.save_item(userID, 'charlist', 'basic')
     quiz = generate_quiz.generate(userID, charType, 'basic')
 
-  if( optionMatched == 0 ):
+  if( optionMatched == 1 ):
     convo_data.save_item(userID, 'charlist', 'combo')
     quiz = generate_quiz.generate(userID, charType, 'basic')
+
+
+  print('optionmatched: ' + str(optionMatched))
 
   quizChoices = []
   for item in quiz['choices']:
