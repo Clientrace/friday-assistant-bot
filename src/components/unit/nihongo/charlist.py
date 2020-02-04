@@ -15,25 +15,30 @@ def exe(userID, data, response, altResponse, choice, optionMatched, valid, maxRe
   charType = convo_data.get_item(userID, 'nihongoCharType')
 
   if( optionMatched == 0 ):
-    convo_data.save_item(userID, 'charlist', 'basic')
+    convo_data.save_item(userID, 'nihongoCharlist', 'basic')
     quiz = generate_quiz.generate(userID, charType, 'basic')
 
-  if( optionMatched == 1 ):
-    convo_data.save_item(userID, 'charlist', 'combo')
-    quiz = generate_quiz.generate(userID, charType, 'basic')
+  elif( optionMatched == 1 ):
+    convo_data.save_item(userID, 'nihongoCharlist', 'combo')
+    quiz = generate_quiz.generate(userID, charType, 'combo')
 
-
-  print('optionmatched: ' + str(optionMatched))
+  else:
+    return response
 
   quizChoices = []
   for item in quiz['choices']:
-    quizChoices.append({
-      'data' : item
-    })
+    quizChoices.append(item)
 
-  response = spiel.free_text( charType + " " + quiz['testChar'], 0)
-  response += spiel.quick_reply(userID, 'FS-14', quizChoices)
-  router.route(userID, 'quiz')
+  quizSpiel = charType + " " + quiz['testChar'] + "\n"\
+    + "Choices:\n"\
+    + "A - " + quizChoices[0] + "\n"\
+    + "B - " + quizChoices[1] + "\n"\
+    + "C - " + quizChoices[2] + "\n"\
+    + "D - " + quizChoices[3] + "\n"
+
+  response += spiel.free_text(quizSpiel, 0)
+  response += router.route(userID, 'nihongo.quiz')
 
   return response, valid
+
 

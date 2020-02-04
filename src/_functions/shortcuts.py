@@ -16,9 +16,6 @@ def read(query):
     if( '#elementDesc' in words[0].lower() ):
       return 'reference.ptoedesc'
 
-    if( '#nihongo' in words[0].lower() ):
-      return 'nihongo.menu'
-
   return None
 
 

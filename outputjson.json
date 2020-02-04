@@ -1,0 +1,288 @@
+{
+  "ref": [
+    {
+      "alpha": "a",
+      "jap": "あ"
+    },
+    {
+      "alpha": "i",
+      "jap": "い"
+    },
+    {
+      "alpha": "u",
+      "jap": "う"
+    },
+    {
+      "alpha": "e",
+      "jap": "え"
+    },
+    {
+      "alpha": "o",
+      "jap": "お"
+    },
+    {
+      "alpha": "ka",
+      "jap": "か"
+    },
+    {
+      "alpha": "ki",
+      "jap": "き"
+    },
+    {
+      "alpha": "ku",
+      "jap": "く"
+    },
+    {
+      "alpha": "ke",
+      "jap": "け"
+    },
+    {
+      "alpha": "ko",
+      "jap": "こ"
+    },
+    {
+      "alpha": "ga",
+      "jap": "が"
+    },
+    {
+      "alpha": "gi",
+      "jap": "ぎ"
+    },
+    {
+      "alpha": "gu",
+      "jap": "ぐ"
+    },
+    {
+      "alpha": "ge",
+      "jap": "げ"
+    },
+    {
+      "alpha": "go",
+      "jap": "ご"
+    },
+    {
+      "alpha": "sa",
+      "jap": "さ"
+    },
+    {
+      "alpha": "shi",
+      "jap": "し"
+    },
+    {
+      "alpha": "su",
+      "jap": "す"
+    },
+    {
+      "alpha": "se",
+      "jap": "せ"
+    },
+    {
+      "alpha": "so",
+      "jap": "そ"
+    },
+    {
+      "alpha": "za",
+      "jap": "ざ"
+    },
+    {
+      "alpha": "ji",
+      "jap": "じ"
+    },
+    {
+      "alpha": "zu",
+      "jap": "ず"
+    },
+    {
+      "alpha": "ze",
+      "jap": "ぜ"
+    },
+    {
+      "alpha": "zo",
+      "jap": "ぞ"
+    },
+    {
+      "alpha": "ta",
+      "jap": "た"
+    },
+    {
+      "alpha": "chi",
+      "jap": "ち"
+    },
+    {
+      "alpha": "tsu",
+      "jap": "つ"
+    },
+    {
+      "alpha": "te",
+      "jap": "て"
+    },
+    {
+      "alpha": "to",
+      "jap": "と"
+    },
+    {
+      "alpha": "da",
+      "jap": "だ"
+    },
+    {
+      "alpha": "ji",
+      "jap": "ぢ"
+    },
+    {
+      "alpha": "zu",
+      "jap": "づ"
+    },
+    {
+      "alpha": "de",
+      "jap": "で"
+    },
+    {
+      "alpha": "do",
+      "jap": "ど"
+    },
+    {
+      "alpha": "na",
+      "jap": "な"
+    },
+    {
+      "alpha": "ni",
+      "jap": "に"
+    },
+    {
+      "alpha": "nu",
+      "jap": "ぬ"
+    },
+    {
+      "alpha": "ne",
+      "jap": "ね"
+    },
+    {
+      "alpha": "no",
+      "jap": "の"
+    },
+    {
+      "alpha": "ha",
+      "jap": "は"
+    },
+    {
+      "alpha": "hi",
+      "jap": "ひ"
+    },
+    {
+      "alpha": "fu",
+      "jap": "ふ"
+    },
+    {
+      "alpha": "he",
+      "jap": "へ"
+    },
+    {
+      "alpha": "ho",
+      "jap": "ほ"
+    },
+    {
+      "alpha": "ba",
+      "jap": "ば"
+    },
+    {
+      "alpha": "bi",
+      "jap": "び"
+    },
+    {
+      "alpha": "bu",
+      "jap": "ぶ"
+    },
+    {
+      "alpha": "be",
+      "jap": "べ"
+    },
+    {
+      "alpha": "bo",
+      "jap": "ぼ"
+    },
+    {
+      "alpha": "pa",
+      "jap": "ぱ"
+    },
+    {
+      "alpha": "pi",
+      "jap": "ぴ"
+    },
+    {
+      "alpha": "pu",
+      "jap": "ぷ"
+    },
+    {
+      "alpha": "pe",
+      "jap": "ぺ"
+    },
+    {
+      "alpha": "po",
+      "jap": "ぽ"
+    },
+    {
+      "alpha": "ma",
+      "jap": "ま"
+    },
+    {
+      "alpha": "mi",
+      "jap": "み"
+    },
+    {
+      "alpha": "mu",
+      "jap": "む"
+    },
+    {
+      "alpha": "me",
+      "jap": "め"
+    },
+    {
+      "alpha": "mo",
+      "jap": "も"
+    },
+    {
+      "alpha": "ya",
+      "jap": "や"
+    },
+    {
+      "alpha": "yu",
+      "jap": "ゆ"
+    },
+    {
+      "alpha": "yo",
+      "jap": "よ"
+    },
+    {
+      "alpha": "ra",
+      "jap": "ら"
+    },
+    {
+      "alpha": "ri",
+      "jap": "り"
+    },
+    {
+      "alpha": "ru",
+      "jap": "る"
+    },
+    {
+      "alpha": "re",
+      "jap": "れ"
+    },
+    {
+      "alpha": "ro",
+      "jap": "ろ"
+    },
+    {
+      "alpha": "wa",
+      "jap": "わ"
+    },
+    {
+      "alpha": "wo",
+      "jap": "を"
+    },
+    {
+      "alpha": "n/m",
+      "jap": "ん"
+    }
+  ]
+}

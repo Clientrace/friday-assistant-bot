@@ -16,7 +16,8 @@ ROUTES = {
   # Define here the persistent menu payload and routes
   # example:
   # 'PERSIST_MAIN_MENU' : 'main'
-  'PERSIST_MAIN' : 'main'
+  'PERSIST_MAIN' : 'main',
+  'PERSIST_TUTORIAL' : 'tutorial.menu'
 }
 
 

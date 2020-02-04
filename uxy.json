@@ -56,6 +56,11 @@
           "type": "postback",
           "title": "Main Menu",
           "payload": "PERSIST_MAIN"
+        },
+        {
+          "type": "postback",
+          "title": "Tutorial",
+          "payload": "PERSIST_TUTORIAL"
         }
       ],
       "composer_input_disabled": false,

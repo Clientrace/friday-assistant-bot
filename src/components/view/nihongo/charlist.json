@@ -3,10 +3,12 @@
   "content" : ["FS-13"],
   "optionType" : "quick_reply",
   "options" : [
-    {"data" : "Basic", "syns" : ["Basic"]},
-    {"data" : "Combination", "syns" : ["Combination"]}
+    {"data" : "Basic", "syns" : ["basic"]},
+    {"data" : "Combination", "syns" : ["combination"]}
   ],
   "retries" : null
 }
+
+
 
 

@@ -1,7 +1,14 @@
 {
   "acceptTypes" : ["any"],
-  "content" : [],
-  "optionType" : "text",
-  "options" :[],
+  "content" : ["FS-14"],
+  "optionType" : "quick_reply",
+  "options" : [
+    {"data" : "A", "syns" : ["a"]},
+    {"data" : "B", "syns" : ["b"]},
+    {"data" : "C", "syns" : ["c"]},
+    {"data" : "D", "syns" : ["d"]}
+  ],
   "retries" : null
 }
+
+

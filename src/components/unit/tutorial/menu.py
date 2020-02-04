@@ -11,12 +11,7 @@ def exe(userID, data, response, altResponse, choice, optionMatched, valid, maxRe
       return [], valid
 
   if( optionMatched == 0 ):
-    convo_data.save_item(userID, 'nihongoCharType', 'hiragana')
-
-  if( optionMatched == 1 ):
-    convo_data.save_item(userID, 'nihongoCharType', 'katakana')
-
-  response = router.route( userID, "nihongo.charlist")
+    response = router.route(userID, 'nihongo.menu')
 
   return response, valid
 

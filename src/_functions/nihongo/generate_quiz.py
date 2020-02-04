@@ -8,22 +8,17 @@ DBSRC = 'src/_functions/nihongo/'
 
 def generate(userID, qtype, charlist):
   charJson = json.loads(open(DBSRC + qtype + '_' + charlist + '.json').read())
-  print(list(charJson))
   testChar = random.choice(list(charJson))
-  choices = [
-    charJson[testChar],
-    charJson[random.choice(list(charJson))],
-    charJson[random.choice(list(charJson))],
-    charJson[random.choice(list(charJson))]
-  ]
+  choices = [None, None, None, None]
+  ans = random.randint(0,3)
+  choices[ans] = charJson[testChar]
+  for i in range(0,4):
+    if( not choices[i] ):
+      choices[i] = charJson[random.choice(list(charJson))]
 
-  random.shuffle(choices)
-  convo_data.save_item(userID, 'nihongo_ans', charJson[testChar])
+  convo_data.save_item(userID, 'nihongo_ans', str(ans))
   return {
     'testChar' : testChar,
     'choices' : choices
   }
-
-
-
 

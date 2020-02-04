@@ -1,0 +1,10 @@
+{
+  "acceptTypes" : ["any"],
+  "content" : ["FS-15"],
+  "optionType" : "quick_reply",
+  "options" : [
+    {"data" : "Nihongo", "syns" : ["nihongo"]}
+  ],
+  "retries" : null
+}
+
